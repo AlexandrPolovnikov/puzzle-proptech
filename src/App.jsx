@@ -6,7 +6,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [fetching, setFetching] = useState(true);
   const [totalCount, setTotalCount] = useState(0);
-
+  const [protoTime, setProtoTime] = useState(59);
   useEffect(() => {
     if (fetching) {
       axios
@@ -41,6 +41,7 @@ function App() {
       setFetching(true);
     }
   };
+  let time = 59;
 
   return (
     <div className="App">
@@ -50,10 +51,14 @@ function App() {
             <img src={item.avatar} alt={count.title} />
             <span className="itemName">{item.name}</span>
             <span className="itemSpeed">
-              Максимальная скорость - {item.speed}
+              Макс. скорость: {item.speed}
+              <br></br>
+              Штрафное время: {Math.random(1).toFixed(2)}мс.
             </span>
             <span className="itemTime">
-              Время заезда - {(item.forfeit / 365 / 12 / 24 / 60).toFixed(3)}
+              Время заезда:
+              <br></br>
+              00:{(time -= 0.025).toFixed(2)}
             </span>
             <span className="itemIndex">{index + 1}</span>
           </div>

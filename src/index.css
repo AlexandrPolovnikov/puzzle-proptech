@@ -21,8 +21,7 @@ code {
 
 .title {
   font-size: 1.5rem;
-  font-weight: 600;
-  /* margin-right: 30px; */
+  font-weight: 300;
   padding: 0;
   text-transform: uppercase;
   color: white;
@@ -33,9 +32,11 @@ code {
 }
 .title:hover {
   border: 1px solid wheat;
+  font-weight: 500;
 }
 
 .itemName {
+  font-weight: 600;
   display: flex;
   justify-content: center;
   text-align: start;
@@ -45,6 +46,7 @@ code {
   display: flex;
   justify-content: center;
   text-align: center;
+  font-size: 1rem;
 }
 
 .itemTime {
