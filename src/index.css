@@ -1,13 +1,59 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.window {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  /* margin-right: 30px; */
+  padding: 0;
+  text-transform: uppercase;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: grid;
+  grid-template-columns: 150px 180px 1fr 1fr 1fr;
+  align-items: center;
+}
+.title:hover {
+  border: 1px solid wheat;
+}
+
+.itemName {
+  display: flex;
+  justify-content: center;
+  text-align: start;
+}
+
+.itemSpeed {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.itemTime {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.itemIndex {
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
