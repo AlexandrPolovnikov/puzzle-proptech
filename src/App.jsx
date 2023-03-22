@@ -6,9 +6,11 @@ function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const [fetching, setFetching] = useState(true);
   const [totalCount, setTotalCount] = useState(0);
-  const [protoTime, setProtoTime] = useState(59);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     if (fetching) {
+      setIsLoading(true);
       axios
         .get(
           // `https://64149c74e8fe5a3f3a0b7a9d.mockapi.io/users?_limit=50&_page=${currentPage}`
@@ -18,6 +20,7 @@ function App() {
           setCount([...count, ...response.data]);
           setCurrentPage((prevState) => prevState + 1);
           setTotalCount(response.headers["x-total-count"]);
+          setIsLoading(false);
         })
         .finally(() => setFetching(false));
     }
@@ -45,25 +48,31 @@ function App() {
 
   return (
     <div className="App">
-      {count.map((item, index, i) => (
-        <div className="window" key={index}>
-          <div className="title">
-            <img src={item.avatar} alt={count.title} />
-            <span className="itemName">{item.name}</span>
-            <span className="itemSpeed">
-              Макс. скорость: {item.speed}
-              <br></br>
-              Штрафное время: {Math.random(1).toFixed(2)}мс.
-            </span>
-            <span className="itemTime">
-              Время заезда:
-              <br></br>
-              00:{(time -= 0.025).toFixed(2)}
-            </span>
-            <span className="itemIndex">{index + 1}</span>
-          </div>
+      {isLoading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <div>
+          {count.map((item, index) => (
+            <div className="window" key={index}>
+              <div className="title">
+                <img src={item.avatar} alt={count.title} />
+                <span className="itemName">{item.name}</span>
+                <span className="itemSpeed">
+                  Макс. скорость: {item.speed}
+                  <br></br>
+                  Штрафное время: {Math.random(1).toFixed(2)}мс.
+                </span>
+                <span className="itemTime">
+                  Время заезда:
+                  <br></br>
+                  00:{(time -= 0.025).toFixed(2)}
+                </span>
+                <span className="itemIndex">{index + 1}</span>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      )}
     </div>
   );
 }
