@@ -44,7 +44,7 @@ function App() {
       setFetching(true);
     }
   };
-  let time = 59;
+  let time = 55;
 
   return (
     <div className="App">
@@ -65,7 +65,7 @@ function App() {
                 <span className="itemTime">
                   Время заезда:
                   <br></br>
-                  00:{(time -= 0.025).toFixed(2)}
+                  00:{(time += 0.017).toFixed(2)}
                 </span>
                 <span className="itemIndex">{index + 1}</span>
               </div>
