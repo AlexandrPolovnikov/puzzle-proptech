@@ -48,12 +48,12 @@ function App() {
 
   return (
     <div className="App">
-      {isLoading ? (
-        <h1>Loading...</h1>
-      ) : (
-        <div>
-          {count.map((item, index) => (
-            <div className="window" key={index}>
+      <div>
+        {count.map((item, index) => (
+          <div className="window" key={index}>
+            {isLoading ? (
+              <h1 className="title">Loading...</h1>
+            ) : (
               <div className="title">
                 <img src={item.avatar} alt={count.title} />
                 <span className="itemName">{item.name}</span>
@@ -69,10 +69,10 @@ function App() {
                 </span>
                 <span className="itemIndex">{index + 1}</span>
               </div>
-            </div>
-          ))}
-        </div>
-      )}
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
