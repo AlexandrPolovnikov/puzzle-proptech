@@ -1,4 +1,4 @@
-# Нажмите на ссылку для просмотра [MST To Do](https://pzl-test-server.web.app/)
+# Нажмите на ссылку для просмотра [PuzzlePropTech](https://pzl-test-server.web.app/)
 
 
 
